@@ -1,12 +1,12 @@
 package main
 
 import (
-	"go-brasilapi/cmd/libs/banks"
+	"go-brasilapi/cmd/libs/holidays"
 	"log"
 )
 
 func main() {
-	res, err := banks.GetBank("289")
+	res, err := holidays.GetHolidays(2004)
 	if err != nil {
 		log.Print(err)
 		return
