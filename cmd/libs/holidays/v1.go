@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"go-brasilapi/cmd/models"
-	"go-brasilapi/cmd/utils"
 	"io"
 	"log"
+
+	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
+	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
 )
 
 func GetHolidays(input int) (holydays []models.Holiday, err error) {
