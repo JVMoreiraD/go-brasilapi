@@ -1,12 +1,12 @@
 package main
 
 import (
-	v1 "go-brasilapi/cmd/libs/cep/v1"
+	"go-brasilapi/cmd/libs/cnpj"
 	"log"
 )
 
 func main() {
-	res, err := v1.GetCEP("60762-060")
+	res, err := cnpj.GetCNPJ("")
 	if err != nil {
 		log.Print(err)
 		return
