@@ -1,12 +1,12 @@
 package main
 
 import (
-	"go-brasilapi/cmd/libs/cnpj"
+	"go-brasilapi/cmd/libs/banks"
 	"log"
 )
 
 func main() {
-	res, err := cnpj.GetCNPJ("")
+	res, err := banks.GetBank("289")
 	if err != nil {
 		log.Print(err)
 		return
