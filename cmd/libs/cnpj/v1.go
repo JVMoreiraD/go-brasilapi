@@ -3,10 +3,11 @@ package cnpj
 import (
 	"encoding/json"
 	"errors"
-	"go-brasilapi/cmd/models"
-	"go-brasilapi/cmd/utils"
 	"io"
 	"log"
+
+	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
+	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
 )
 
 func GetCNPJ(input string) (cnpj models.CNPJ, err error) {

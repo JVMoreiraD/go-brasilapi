@@ -3,10 +3,11 @@ package ddd
 import (
 	"encoding/json"
 	"errors"
-	"go-brasilapi/cmd/models"
-	"go-brasilapi/cmd/utils"
 	"io"
 	"log"
+
+	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
+	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
 )
 
 func GetDDD(input string) (ddd models.DDD, err error) {

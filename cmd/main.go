@@ -1,8 +1,9 @@
 package main
 
 import (
-	"go-brasilapi/cmd/libs/holidays"
 	"log"
+
+	"github.com/JVMoreiraD/go-brasilapi/cmd/libs/holidays"
 )
 
 func main() {
