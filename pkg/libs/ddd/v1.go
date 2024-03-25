@@ -15,9 +15,9 @@ func GetDDD(input string) (ddd models.DDD, err error) {
 
 	var response models.DDD
 
-	res := utils.HttpReq(v1url)
+	res, err := utils.HttpReq(v1url)
 
-	if res.StatusCode == 404 {
+	if err != nil {
 		return models.DDD{}, errors.New("not found")
 	}
 

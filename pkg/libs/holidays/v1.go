@@ -2,7 +2,6 @@ package holidays
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -16,14 +15,12 @@ func GetHolidays(input int) (holydays []models.Holiday, err error) {
 
 	var response []models.Holiday
 
-	res := utils.HttpReq(v1url)
+	res, err := utils.HttpReq(v1url)
 
-	if res.StatusCode == 404 {
-		return []models.Holiday{}, errors.New("not found")
+	if err != nil {
+		return []models.Holiday{}, err
 	}
-	if res.StatusCode == 500 {
-		return []models.Holiday{}, errors.New("not found")
-	}
+
 	defer res.Body.Close()
 	body, readErr := io.ReadAll(res.Body)
 

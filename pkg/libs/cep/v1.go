@@ -2,7 +2,6 @@ package cep
 
 import (
 	"encoding/json"
-	"errors"
 
 	"io"
 	"log"
@@ -16,13 +15,10 @@ func GetCEP(input string) (cep models.CEP, err error) {
 
 	var response models.CEP
 
-	res := utils.HttpReq(v1url)
+	res, err := utils.HttpReq(v1url)
 
-	if res.StatusCode == 404 {
-		return models.CEP{}, errors.New("not found")
-	}
-	if res.StatusCode == 500 {
-		return models.CEP{}, errors.New("all services are down")
+	if err != nil {
+		return models.CEP{}, err
 	}
 
 	defer res.Body.Close()

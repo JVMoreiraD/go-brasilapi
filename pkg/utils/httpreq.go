@@ -1,11 +1,12 @@
 package utils
 
 import (
+	"errors"
 	"log"
 	"net/http"
 )
 
-func HttpReq(input string) (res *http.Response) {
+func HttpReq(input string) (res *http.Response, err error) {
 	var baseURl = "https://brasilapi.com.br/api/"
 	url := baseURl + input
 	req, err := http.NewRequest(http.MethodGet, url, nil)
@@ -19,6 +20,12 @@ func HttpReq(input string) (res *http.Response) {
 	if err != nil {
 		log.Print(err.Error())
 	}
+	if res.StatusCode == 404 {
+		return res, errors.New("not found")
+	}
+	if res.StatusCode == 500 {
+		return res, errors.New("all services are down")
+	}
 
-	return res
+	return res, nil
 }

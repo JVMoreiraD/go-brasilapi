@@ -14,9 +14,9 @@ import (
 func GetBank(input string) (banks models.Bank, err error) {
 	var v1url = "banks/v1/" + input
 	var response models.Bank
-	res := utils.HttpReq(v1url)
-	if res.StatusCode == 404 {
-		return models.Bank{}, errors.New("not found")
+	res, err := utils.HttpReq(v1url)
+	if err != nil {
+		return models.Bank{}, err
 	}
 
 	defer res.Body.Close()
@@ -38,8 +38,8 @@ func GetBank(input string) (banks models.Bank, err error) {
 func GetAllBanks() (banks []models.Bank, err error) {
 	var v1url = "banks/v1/"
 	var response []models.Bank
-	res := utils.HttpReq(v1url)
-	if res.StatusCode == 404 {
+	res, err := utils.HttpReq(v1url)
+	if err != nil {
 		return []models.Bank{}, errors.New("not found")
 	}
 

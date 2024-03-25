@@ -18,9 +18,9 @@ func GetCNPJ(input string) (cnpj models.CNPJ, err error) {
 
 	var response models.CNPJ
 
-	res := utils.HttpReq(v1url)
-	if res.StatusCode == 404 {
-		return models.CNPJ{}, errors.New("not found")
+	res, err := utils.HttpReq(v1url)
+	if err != nil {
+		return models.CNPJ{}, err
 	}
 
 	defer res.Body.Close()
