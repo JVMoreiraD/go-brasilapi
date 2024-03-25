@@ -1,4 +1,4 @@
-package v1
+package cep
 
 import (
 	"encoding/json"
@@ -18,6 +18,9 @@ func GetCEP(input string) (cep models.CEP, err error) {
 
 	if res.StatusCode == 404 {
 		return models.CEP{}, errors.New("not found")
+	}
+	if res.StatusCode == 500 {
+		return models.CEP{}, errors.New("all services are down")
 	}
 
 	defer res.Body.Close()
