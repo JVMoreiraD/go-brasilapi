@@ -7,8 +7,8 @@ import (
 	"io"
 	"log"
 
-	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
-	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/models"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
 func GetBank(input string) (banks models.Bank, err error) {

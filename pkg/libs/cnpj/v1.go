@@ -6,11 +6,14 @@ import (
 	"io"
 	"log"
 
-	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
-	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/models"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
 func GetCNPJ(input string) (cnpj models.CNPJ, err error) {
+	if input == "" {
+		return models.CNPJ{}, errors.New("invalid request")
+	}
 	var v1url = "cnpj/v1/" + input
 
 	var response models.CNPJ

@@ -6,8 +6,8 @@ import (
 	"io"
 	"log"
 
-	"github.com/JVMoreiraD/go-brasilapi/cmd/models"
-	"github.com/JVMoreiraD/go-brasilapi/cmd/utils"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/models"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
 func GetDDD(input string) (ddd models.DDD, err error) {

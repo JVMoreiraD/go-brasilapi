@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/JVMoreiraD/go-brasilapi/cmd/libs/holidays"
+	"github.com/JVMoreiraD/go-brasilapi/pkg/libs/holidays"
 )
 
 func main() {
