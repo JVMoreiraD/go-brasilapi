@@ -1,3 +1,4 @@
+// Este pacote consulta os feriados no Brasil.
 package holidays
 
 import (
@@ -10,6 +11,7 @@ import (
 	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
+// Esta função é responsavel por retornar os feriados que temos durante um determinado ano
 func GetHolidays(input int) (holydays []models.Holiday, err error) {
 	v1url := fmt.Sprint("feriados/v1/", input)
 

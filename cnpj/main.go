@@ -1,3 +1,4 @@
+// Pacote focado em consultar o Cadastro de Pessoa Juridica.
 package cnpj
 
 import (
@@ -10,6 +11,7 @@ import (
 	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
+// Esta função retorna uma consulta do CNPJ
 func GetCNPJ(input string) (cnpj models.CNPJ, err error) {
 	if input == "" {
 		return models.CNPJ{}, errors.New("invalid request")

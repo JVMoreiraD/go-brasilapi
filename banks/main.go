@@ -1,3 +1,8 @@
+// O pacote propõe consultar os bancos do brasil
+//
+// Esse pacote inclui as seguintes métodos
+// - GetBank()
+// - GetBanks()
 package banks
 
 import (
@@ -11,6 +16,7 @@ import (
 	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
+// A função GetBank recebe uma string com o codigo do banco que eu desejo consultar
 func GetBank(input string) (banks models.Bank, err error) {
 	var v1url = "banks/v1/" + input
 	var response models.Bank
@@ -35,6 +41,8 @@ func GetBank(input string) (banks models.Bank, err error) {
 	return response, nil
 
 }
+
+// Esta função retorna uma lista com todos os bancos do Brasil
 func GetAllBanks() (banks []models.Bank, err error) {
 	var v1url = "banks/v1/"
 	var response []models.Bank

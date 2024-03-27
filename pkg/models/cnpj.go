@@ -1,5 +1,6 @@
 package models
 
+// Estrutura do objeto do cnpj
 type CNPJ struct {
 	Cnpj                       string  `json:"cnpj"`
 	IdentificadorMatrizFilial  int     `json:"identificador_matriz_filial"`
@@ -41,11 +42,13 @@ type CNPJ struct {
 	Qsa                        []qsa   `json:"qsa"`
 }
 
+// Estrutura do objeto CNAES(Classificação Nacional das Atividades Econômicas.)
 type cnaes struct {
 	Codigo    int    `json:"codigo"`
 	Descricao string `json:"descricao"`
 }
 
+// Este objeto do QSA(Quadro de sócios e administradores)
 type qsa struct {
 	IdentificadorDeSocio                 int     `json:"identificador_de_socio"`
 	NomeSocio                            string  `json:"nome_socio"`

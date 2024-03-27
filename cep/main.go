@@ -1,3 +1,4 @@
+// Pacote propõe consultar os CEPs do brasil
 package cep
 
 import (
@@ -10,6 +11,7 @@ import (
 	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
+// Esta função faz a consulta do cep
 func GetCEP(input string) (cep models.CEP, err error) {
 	var v1url = "cep/v1/" + input
 

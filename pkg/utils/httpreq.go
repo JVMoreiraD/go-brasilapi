@@ -1,3 +1,4 @@
+// O pacote utils é aonde estão funções que compartilham logica entre outros pacotes
 package utils
 
 import (
@@ -6,6 +7,7 @@ import (
 	"net/http"
 )
 
+// Esta função faz uma requisição HTTP para uma url composta por https://brasilapi.com.br/api/ + complemento
 func HttpReq(input string) (res *http.Response, err error) {
 	var baseURl = "https://brasilapi.com.br/api/"
 	url := baseURl + input

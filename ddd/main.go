@@ -1,3 +1,4 @@
+// Este pacote propõe retornar as informações de um DDD.
 package ddd
 
 import (
@@ -10,6 +11,7 @@ import (
 	"github.com/JVMoreiraD/go-brasilapi/pkg/utils"
 )
 
+// Esta função faz uma consulta de um DDD retornando o estado aonde ele é utilizado e as cidades que o adotam.
 func GetDDD(input string) (ddd models.DDD, err error) {
 	var v1url = "ddd/v1/" + input
 
