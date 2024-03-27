@@ -1,0 +1,5 @@
+package cptec
+
+func getLocals() {
+
+}
